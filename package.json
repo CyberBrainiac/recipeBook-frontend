@@ -1,5 +1,5 @@
 {
-  "name": "project",
+  "name": "recipe_book",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -57,8 +57,8 @@
   ],
   "main": "./electron.js",
   "build": {
-    "appId": "com.example.mustage_todo",
-    "productName": "mustage_todo",
+    "appId": "com.example.Recipe_book",
+    "productName": "recipes",
     "files": [
       "dist/**/*",
       "electron.js"

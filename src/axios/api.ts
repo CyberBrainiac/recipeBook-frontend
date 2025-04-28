@@ -1,4 +1,9 @@
-import { BaseResponse, Recipe, RecipeResponse } from "@/interfaces/recipesInterfaces";
+import {
+  BaseResponse,
+  Recipe,
+  RecipeResponse,
+  RecipesByFilter,
+} from "@/interfaces/recipesInterfaces";
 import axios from "axios";
 
 const API_BASE_URL = import.meta.env.VITE_API_URL;
@@ -32,6 +37,21 @@ const api = {
         throw new Error("Failed to fetch recipe");
       }
       return response.data.data.meals[0];
+    } catch (error) {
+      console.error(error);
+      throw new Error(JSON.stringify(error));
+    }
+  },
+
+  getRecipesByFilter: async ({ type, filter_term }: RecipesByFilter): Promise<Recipe[]> => {
+    try {
+      const response = await apiClient.get<BaseResponse<Recipe[]>>(
+        `/getFiltered?type=${type}&filter_term=${filter_term}`
+      );
+      if (!response.data.success) {
+        throw new Error("Failed to fetch recipe");
+      }
+      return response.data.data;
     } catch (error) {
       console.error(error);
       throw new Error(JSON.stringify(error));

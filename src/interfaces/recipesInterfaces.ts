@@ -1,8 +1,28 @@
 import { HttpStatusCode } from "axios";
 
-export interface IngredientDto {
+export interface Ingredient {
   name: string;
   measure: string;
+}
+
+export type FiltersType = "i" | "a" | "c";
+
+export interface RecipesByFilter {
+  type: FiltersType;
+  filter_term: string;
+}
+
+export interface RecipeDetailProps {
+  category: Set<string>;
+}
+
+export interface CategoryContextProps {
+  categorySet: Set<string> | undefined;
+}
+
+// Context Provider Component
+export interface CategoryProviderProps extends CategoryContextProps {
+  children: React.ReactNode;
 }
 
 export interface Recipe {
@@ -15,7 +35,7 @@ export interface Recipe {
   strMealThumb: string;
   strTags?: string;
   strYoutube?: string;
-  ingredients: IngredientDto[];
+  ingredients: Ingredient[];
   strSource?: string | null;
   strImageSource?: string | null;
   strCreativeCommonsConfirmed?: string | null;
