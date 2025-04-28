@@ -1,0 +1,22 @@
+@import "/src/assets/style/variables";
+@import "/src/assets/style/mixins";
+
+.container {
+  color: $text-color-main;
+  margin-top: auto;
+  border-top: 2px solid $border-color-main;
+}
+
+.content {
+  padding: 10px 0;
+  @include flex-row();
+}
+
+.copyright {
+  padding: 10px 0;
+  text-align: center;
+
+  &_link {
+    color: $highlight-additional;
+  }
+}

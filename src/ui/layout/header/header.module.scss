@@ -1,0 +1,51 @@
+@import "/src/assets/style/variables";
+@import "/src/assets/style/mixins";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  background-color: $page-bg-color-additional;
+  border-bottom: 2px solid $border-color-main;
+}
+
+.logo {
+  height: 64px;
+  width: 64px;
+
+  &Link {
+    height: 64px;
+    width: 64px;
+    align-self: center;
+  }
+}
+
+.user {
+  height: 48px;
+  width: 48px;
+  margin-right: 8px;
+  align-self: center;
+
+  &Icon {
+    @include common-img();
+  }
+}
+
+.nav {
+  display: flex;
+  align-self: center;
+  flex-wrap: wrap;
+  column-gap: 20px;
+  flex-direction: row;
+
+  &Item {
+    @include bold-text(24px);
+    list-style-type: none;
+
+    &:hover {
+      color: $highlight-main;
+    }
+  }
+}
