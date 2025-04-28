@@ -36,10 +36,10 @@
 
    ```bash
    npm run build
-   npm run serve
+   npm run preview
    ```
 
-   - The server will start on `http://localhost:4202/` by default.
+   - The server will start on `http://localhost:8080/` by default.
    - .env file ready to use, i add it to repository
 
 ---
